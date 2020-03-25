@@ -1,0 +1,240 @@
+#1
+class Mahasiswa(object):
+    def __init__(self, nama, nim, kota, uangsaku):
+        self.nama = nama
+        self.nim = nim
+        self.kotaTinggal = kota
+        self.uangSaku = uangsaku
+
+l0 = Mahasiswa("hasan", 177, "bogor", 240000)
+l1 = Mahasiswa("dzaki", 265, "tangerang", 230000)
+l2 = Mahasiswa("muhammad", 120, "madiun", 250000)
+l3 = Mahasiswa("diaz", 130, "kudus", 235000)
+l4 = Mahasiswa("arfian", 165, "lampung", 240000)
+l5 = Mahasiswa("amin", 127, "pekalongan", 250000)
+l6 = Mahasiswa("amar", 139, "batang", 245000)
+l7 = Mahasiswa("adit", 146, "demak", 245000)
+l8 = Mahasiswa("emir", 200, "pati", 245000)
+l9 = Mahasiswa("kahirul", 192, "purwodadi", 270000)
+l10 = Mahasiswa("abror", 187, "klaten", 265000)
+
+Daftar = [l0, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10]
+
+def cariKotaasal(list, target):
+    a = []
+    for i in list :
+        if i.kotaTinggal == target:
+            a.append(list.index(i))
+    return a
+
+a = cariKotaasal(Daftar, "kudus")
+print(a)
+
+#2
+class Mahasiswa(object):
+    def __init__(self, nama, nim, kota, uangsaku):
+        self.nama = nama
+        self.nim = nim
+        self.kotaTinggal = kota
+        self.uangSaku = uangsaku
+
+l0 = Mahasiswa("hasan", 177, "bogor", 240000)
+l1 = Mahasiswa("dzaki", 265, "tangerang", 230000)
+l2 = Mahasiswa("muhammad", 120, "madiun", 250000)
+l3 = Mahasiswa("diaz", 130, "kudus", 220000)
+l4 = Mahasiswa("arfian", 165, "lampung", 240000)
+l5 = Mahasiswa("amin", 127, "pekalongan", 250000)
+l6 = Mahasiswa("amar", 139, "batang", 245000)
+l7 = Mahasiswa("adit", 146, "demak", 245000)
+l8 = Mahasiswa("emir", 200, "pati", 245000)
+l9 = Mahasiswa("kahirul", 192, "purwodadi", 270000)
+l10 = Mahasiswa("abror", 187, "klaten", 265000)
+
+Daftar = [l0, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10]
+
+def cariUangSakuTerkecil(list):
+    temp = list[0].uangSaku
+    for i in list[1:]:
+        if i.uangSaku < temp:
+            temp = i.uangSaku
+    return temp
+
+p = cariUangSakuTerkecil(Daftar)
+print(p)
+
+#3
+class Mahasiswa(object):
+    def __init__(self,nama,NIM,kota,us):
+        self.nama = nama
+        self.NIM = NIM
+        self.kotaTinggal = kota
+        self.uangSaku = us
+
+l0 = Mahasiswa("hasan", 177, "bogor", 240000)
+l1 = Mahasiswa("dzaki", 125, "tangerang", 230000)
+l2 = Mahasiswa("muhammad", 120, "madiun", 250000)
+l3 = Mahasiswa("diaz", 130, "kudus", 200000)
+l4 = Mahasiswa("arfian", 165, "lampung", 240000)
+l5 = Mahasiswa("amin", 127, "pekalongan", 250000)
+l6 = Mahasiswa("amar", 139, "batang", 225000)
+l7 = Mahasiswa("adit", 146, "demak", 235000)
+l8 = Mahasiswa("emir", 200, "pati", 215000)
+l9 = Mahasiswa("kahirul", 192, "purwodadi", 270000)
+l10 = Mahasiswa("abror", 187, "klaten", 265000)
+
+Daftar = [l0, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10]
+def cariTerkecil (self):
+    terkecil = self[0].uangSaku
+    c = []
+    for i in self:
+        if i.uangSaku < terkecil :
+            c.append ((i.nama, i.NIM, i.kotaTinggal, i.uangSaku))
+    return c
+print(cariTerkecil(Daftar))
+
+#4
+class Mahasiswa(object):
+    def __init__(self, nama, nim, kota, uangsaku):
+        self.nama = nama
+        self.nim = nim
+        self.kotaTinggal = kota
+        self.uangSaku = uangsaku
+
+l0 = Mahasiswa("hasan", 177, "bogor", 240000)
+l1 = Mahasiswa("dzaki", 265, "tangerang", 230000)
+l2 = Mahasiswa("muhammad", 120, "madiun", 250000)
+l3 = Mahasiswa("diaz", 130, "kudus", 300000)
+l4 = Mahasiswa("arfian", 165, "lampung", 240000)
+l5 = Mahasiswa("amin", 127, "pekalongan", 250000)
+l6 = Mahasiswa("amar", 139, "batang", 285000)
+l7 = Mahasiswa("adit", 146, "demak", 260000)
+l8 = Mahasiswa("emir", 200, "pati", 245000)
+l9 = Mahasiswa("kahirul", 192, "purwodadi", 270000)
+l10 = Mahasiswa("abror", 187, "klaten", 265000)
+
+Daftar = [l0, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10]
+
+def cariUangSakuKurangdari250rb(list):
+    temp = []
+    for i in list:
+        if i.uangSaku < 250000:
+            temp.append(i)
+    return temp
+
+f = cariUangSakuKurangdari250rb(Daftar)
+for i in f:
+    print(i.nama)
+
+#5
+class node (object):
+    def __init__ (self, data, next = None):
+        self.data = data
+        self.next = next
+    def cari (self, cari):
+        curNode = self
+        while curNode is not None :
+            if curNode.next != None :
+                if curNode.data != cari :
+                    curNode = curNode.next
+                else :
+                    print ("Data", cari, "ada dalam Linked List")
+                    break
+            elif curNode.next == None :
+                print ("Data", cari, "tidak ada dalam linked list")
+                break
+a = node (18)
+menu = a
+a.next = node (41)
+a = a.next
+a.next = node (11)
+a = a.next
+a.next = node (60)
+
+menu.cari(41)
+menu.cari(60)
+
+#6
+def binSe(kumpulan, target):
+    low = 0
+    high = len(kumpulan) -1
+    data = []
+    while low <= high:
+        mid = (high + low) //2
+        if kumpulan[mid] == target:
+            data.append(kumpulan.index(target))
+            return True
+        elif target < kumpulan[mid]:
+            high = mid -1
+        else :
+            low = mid +1
+    return False
+
+list = [38, 12, 56, 137, 299]
+target1 = 56
+target2 = 120
+
+print ("nilai target :", target1)
+print (binSe(list, target1))
+
+print ("\nnilai target :", target2)
+print (binSe(list, target2))
+
+#7
+def binSeMass(kumpulan, target):
+    temp = []
+    low = 0
+    high = len(kumpulan)-1
+    while low <= high :
+        mid = (high+low)//2
+        if kumpulan[mid] == target:
+            midKiri = mid-1
+            while kumpulan[midKiri] == target:
+                temp.append(midKiri)
+                midKiri = midKiri-1
+            temp.append(mid)
+            midKanan = mid+1
+            while kumpulan[midKanan] == target:
+                temp.append(midKanan)
+                midKanan = midKanan+1
+            return temp
+        elif target < kumpulan[mid]:
+            high = mid-1
+        else:
+            low = mid+1
+    return False
+
+list = [2, 4, 5, 6, 7, 5, 6, 6, 6, 10, 11, 12, 13, 13, 14]
+print(binSeMass(list, 6))
+
+#8
+print ("""Ada 2 kemungkinan pola yang bisa digunakan.
+Misalkan, apabila angka yang akan ditebak adalah 70.
+Pola Pertama :
+
+    a = nilai tebakan pertama // 2
+    tebakan selanjutnya = nilai tebakan "lebih dari" + a
+    
+    "jika hasil tebakab selanjutnya "kurang dari", maka nilai yang dipakai tetap
+    nilai lebih dari sebelumnya"
+    a = a // 2
+    
+Simulasi
+    tebakan 1 : 50 (mengambil nilai tengah) jawaban "lebih dari itu"
+    tebakan 2 : 75 (lebih dari 50) jawaban "kurang dari itu"
+    tebakan 3 : 62 (kurang dari 75) jawaban "lebih dari itu"
+    tebakan 4 : 68 (lebih dari 62) jawaban "lebih dari itu"
+    tebakan 5 : 71 (lebih dari 68) jawaban "kurang dari itu"
+    tebakan 6 : 69 (kurang dari 71) jawaban "lebih dari itu"
+    tebakan 7 : antara 71 dan 69, jadi jawabannya 70
+Pola Kedua :
+    menggunakan barisan geometri Sn = 2^n
+    Barisan yang terjadi 2, 4, 8, 16, 32, 64
+    Misal angka yang akan ditebak adalah 68
+    tebakan 1 : 64 jawaban "lebih dari itu"
+    tebakan 2 : 96 (64 + 32) jawaban "kurang dari itu"
+    tebakan 3 : 80 (64 + 16) jawaban "kurang dari itu"
+    tebakan 4 : 72 (64 + 8) jawaban "kurang dari itu"
+    tebakan 5 : 68 (64 + 4) jawaban "lebih dari itu"
+    tebakan 6 : 70 (64 + 2) jawaban "Pas"
+""")
+
